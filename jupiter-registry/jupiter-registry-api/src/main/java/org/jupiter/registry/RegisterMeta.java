@@ -196,6 +196,8 @@ public class RegisterMeta {
         private String serviceProviderName;
         // 版本信息
         private String version;
+        // restful信息，equals() 和 hashCode() 无需计算在内
+        private RestfulMeta restfulMeta;
 
         public ServiceMeta() {}
 
@@ -203,6 +205,13 @@ public class RegisterMeta {
             this.group = group;
             this.serviceProviderName = serviceProviderName;
             this.version = version;
+        }
+
+        public ServiceMeta(String group, String serviceProviderName, String version, RestfulMeta restfulMeta) {
+            this.group = group;
+            this.serviceProviderName = serviceProviderName;
+            this.version = version;
+            this.restfulMeta = restfulMeta;
         }
 
         public String getGroup() {
@@ -227,6 +236,14 @@ public class RegisterMeta {
 
         public void setVersion(String version) {
             this.version = version;
+        }
+
+        public RestfulMeta getRestfulMeta() {
+            return restfulMeta;
+        }
+
+        public void setRestfulMeta(RestfulMeta restfulMeta) {
+            this.restfulMeta = restfulMeta;
         }
 
         @Override
@@ -255,6 +272,57 @@ public class RegisterMeta {
                     "group='" + group + '\'' +
                     ", serviceProviderName='" + serviceProviderName + '\'' +
                     ", version='" + version + '\'' +
+                    '}';
+        }
+    }
+
+    /**
+     * RestFul配置, 无需做equals和hashCode重写, 扩展功能
+     */
+    public static class RestfulMeta {
+        private String host;
+        private int port;
+        private String uri;
+
+        public RestfulMeta() {
+        }
+
+        public RestfulMeta(String host, int port, String uri) {
+            this.host = host;
+            this.port = port;
+            this.uri = uri;
+        }
+
+        public String getHost() {
+            return host;
+        }
+
+        public void setHost(String host) {
+            this.host = host;
+        }
+
+        public int getPort() {
+            return port;
+        }
+
+        public void setPort(int port) {
+            this.port = port;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
+        @Override
+        public String toString() {
+            return "RestfulMeta{" +
+                    "host='" + host + '\'' +
+                    ", port='" + port + '\'' +
+                    ", uri='" + uri + '\'' +
                     '}';
         }
     }

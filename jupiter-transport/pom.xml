@@ -31,5 +31,6 @@
     <modules>
         <module>jupiter-transport-api</module>
         <module>jupiter-transport-netty</module>
+        <module>jupiter-transport-http</module>
     </modules>
 </project>

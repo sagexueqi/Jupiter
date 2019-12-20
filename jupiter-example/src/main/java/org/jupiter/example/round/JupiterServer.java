@@ -52,6 +52,7 @@ public class JupiterServer {
             server.connectToRegistryServer("127.0.0.1:20001");
             server.publish(provider1, provider2);
             server.start();
+            System.out.printf("。。。。。。。。。。。。。。。。。。。。。。。。。。。");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

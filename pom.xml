@@ -67,6 +67,7 @@
         <zookeeper.version>3.4.14</zookeeper.version>
         <opentracing.version>0.31.0</opentracing.version>
         <spring-framework.version>4.3.0.RELEASE</spring-framework.version>
+        <tomcat.embed.version>8.0.11</tomcat.embed.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <main.user.dir>${user.dir}</main.user.dir>
     </properties>
@@ -360,6 +361,19 @@
             <!-- ### benchmark dependency: end -->
             <!-- ## optional dependency: end -->
             <!-- # common dependency: end -->
+
+            <!-- # http dependency: start -->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat.embed.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-logging-juli</artifactId>
+                <version>${tomcat.embed.version}</version>
+            </dependency>
+            <!-- # http dependency: end -->
         </dependencies>
     </dependencyManagement>
 
